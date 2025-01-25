@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --red: #ff0000;
+}
+
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Michroma', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.nav-link {
+  @apply relative text-white hover:text-red-600 transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.video-background {
+  @apply fixed top-0 left-0 w-full h-full -z-10;
+}
+
+.video-background video {
+  @apply w-full h-full object-cover;
+}
+
+.hero-content {
+  @apply relative z-10 flex flex-col items-center justify-center text-center px-4;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}
+
+.cta-button {
+  @apply px-8 py-3 bg-red-600 text-white font-bold text-lg rounded-full 
+         hover:bg-red-700 transform hover:scale-105 transition-all duration-300
+         shadow-lg hover:shadow-red-600/50;
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-12 text-center;
+}
+
+.program-card {
+  @apply bg-zinc-900/80 p-8 rounded-lg shadow-lg hover:shadow-red-600/20
+         transform hover:-translate-y-2 transition-all duration-300
+         backdrop-blur-sm;
+}
+
+.testimonial-card {
+  @apply bg-zinc-900/80 p-8 rounded-lg shadow-lg
+         transform transition-all duration-500 backdrop-blur-sm;
+}
+
+.icon-outline {
+  @apply w-16 h-16 stroke-current text-red-600;
+}
+
+.carousel-container {
+  @apply relative overflow-hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel {
+  @apply flex transition-transform duration-500 ease-out;
+}
+
+.carousel-item {
+  @apply flex-none w-full;
+}
+
+.page-transition {
+  @apply transition-opacity duration-300;
+}
